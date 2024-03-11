@@ -37,8 +37,8 @@ const updateExchangeRate = async () => {
   let data = await response.json();
   let rate = data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
   //console.log(data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()]);
-  let finalAmount = (amtVal * rate).toFixed(2); // Rounds to 2 decimal places
-  //let finalAmount = amtVal * rate;
+  //let finalAmount = (amtVal * rate).toFixed(2); // Rounds to 2 decimal places
+  let finalAmount = amtVal * rate;
   console.log(typeof (finalAmount));
   msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
 };
